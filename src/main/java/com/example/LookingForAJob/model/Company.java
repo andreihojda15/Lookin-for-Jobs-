@@ -1,4 +1,4 @@
-package Domain.Entity;
+package com.example.LookingForAJob.model;
 
 import javax.persistence.*;
 

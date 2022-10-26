@@ -1,4 +1,4 @@
-package Domain.Entity;
+package com.example.LookingForAJob.model;
 
 import javax.persistence.*;
 
@@ -13,7 +13,7 @@ import java.sql.Blob;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "User")
+@Table
 @Getter
 @Setter
 @Builder
@@ -31,10 +31,10 @@ public class User {
     @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "E-mail", unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "Password")
+    @Column(name = "password")
     private String password;
 
     @Column(name = "contactNumber")
@@ -50,7 +50,7 @@ public class User {
     private LocalDate dateOfBirth;
 
     @Column(name = "role")
-    private UserRole role;
+    private String role;
 
 
     public User() {
