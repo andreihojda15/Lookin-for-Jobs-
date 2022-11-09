@@ -5,7 +5,9 @@ import com.example.LookingForAJob.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -23,5 +25,15 @@ public class UserService {
 
     public User addUser(User user) {
         return userRepository.save(user);
+    }
+
+    public User removeUser(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new EntityNotFoundException("Couldn't find the user you want to delete");
+        } else {
+            userRepository.deleteById(id);
+            return user.get();
+        }
     }
 }
