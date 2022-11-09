@@ -34,6 +34,16 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(user));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> editUser(@RequestBody User user, @PathVariable("id") Long id) {
+        try {
+            User edited = userService.editUser(user, id);
+            return ResponseEntity.status(HttpStatus.OK).body(edited);
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteUserById(@PathVariable("id") Long id) {
         try {
