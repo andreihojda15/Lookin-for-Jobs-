@@ -13,7 +13,7 @@ import java.sql.Blob;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "users")
 @Getter
 @Setter
 @Builder
