@@ -14,12 +14,15 @@ public class CompanyService {
     private CompanyRepository companyRepository;
 
     public List<Company> getCompanies() {
-        List<Company> all = companyRepository.findAll();
-        return all;
+        return companyRepository.findAll();
     }
 
     public Company getCompany(Long companyID) {
         return  companyRepository.findById(companyID).get();
 
+    }
+
+    public Company addCompany(Company company) {
+        return companyRepository.save(company);
     }
 }

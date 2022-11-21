@@ -8,9 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan
 @EnableJpaRepositories
-public class LookingForAJobApplication { // test commit
-	public static void main(String[] args) {
-		SpringApplication.run(LookingForAJobApplication.class, args);
-	}
-
+public class LookingForAJobApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(LookingForAJobApplication.class, args);
+    }
 }
