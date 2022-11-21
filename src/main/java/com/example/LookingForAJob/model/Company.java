@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table
@@ -15,11 +12,12 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Company {
 
     @Id
-    @Column(name = "ID_Company")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long companyID;
 
@@ -32,10 +30,9 @@ public class Company {
     @Column(name = "companyWebsite")
     private String url;
 
-
-
-
-
-    public Company() {}
-
+    public Company(String companyName, String address, String url) {
+        this.companyName = companyName;
+        this.address = address;
+        this.url = url;
+    }
 }

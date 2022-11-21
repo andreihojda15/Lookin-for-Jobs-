@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Blob;
 import java.time.LocalDate;
@@ -18,11 +15,12 @@ import java.time.LocalDate;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class User {
     @Id
     @Column(name = "id")
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "firstName")
@@ -37,24 +35,28 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "contactNumber")
+    @Column(nullable = true)
     private String contactNumber;
 
-    @Column(name = "Image")
+    @Column(name = "Image", nullable = true)
     private Blob image;
 
-    @Column(name = "CV")
+    @Column(name = "CV", nullable = true)
     private Blob cv;
 
-    @Column(name = "dateOfBirth")
+    @Column(nullable = true)
     private LocalDate dateOfBirth;
 
     @Column(name = "role")
     private String role;
 
-
-    public User() {
+    public User(String firstName, String lastName, String email, String password, String contactNumber, String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.contactNumber = contactNumber;
+        this.role = role;
     }
-
 
 }
