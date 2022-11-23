@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Front
+//  Lookin'ForJobs
 //
 //  Created by Alexandra Minyov on 23.11.2022.
 //
@@ -34,11 +34,11 @@ struct ContentView: View {
                 }
                 ToolbarItem {
                     Button(action: addItem) {
-                        Label("Add Item:", systemImage: "plus")
+                        Label("Add Item", systemImage: "plus")
                     }
                 }
             }
-            Text("Select an item:")
+            Text("Select an item")
         }
     }
 

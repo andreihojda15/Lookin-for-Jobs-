@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  Front
+//  Lookin'ForJobs
 //
 //  Created by Alexandra Minyov on 23.11.2022.
 //
@@ -31,7 +31,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Front")
+        container = NSPersistentContainer(name: "Lookin_ForJobs")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

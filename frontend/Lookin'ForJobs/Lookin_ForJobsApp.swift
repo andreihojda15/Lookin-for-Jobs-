@@ -1,6 +1,6 @@
 //
-//  FrontApp.swift
-//  Front
+//  Lookin_ForJobsApp.swift
+//  Lookin'ForJobs
 //
 //  Created by Alexandra Minyov on 23.11.2022.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct FrontApp: App {
+struct Lookin_ForJobsApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
