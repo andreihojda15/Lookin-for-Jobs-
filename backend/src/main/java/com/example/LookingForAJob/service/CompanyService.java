@@ -17,12 +17,15 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
-    public Company getCompany(Long companyID) {
-        return  companyRepository.findById(companyID).get();
-
+    public Company getCompany(Long id) {
+        return  companyRepository.findById(id).get();
     }
 
     public Company addCompany(Company company) {
         return companyRepository.save(company);
+    }
+
+    public void deleteCompany(Long id) {
+        companyRepository.deleteById(id);
     }
 }
