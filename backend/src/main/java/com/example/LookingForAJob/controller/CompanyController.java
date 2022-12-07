@@ -24,12 +24,18 @@ public class CompanyController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Company> getCompanyById(@PathVariable("companyID") Long companyID) {
-        return ResponseEntity.status(HttpStatus.OK).body(companyService.getCompany(companyID));
+    public ResponseEntity<Company> getCompanyById(@PathVariable("id") Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(companyService.getCompany(id));
     }
 
     @PostMapping
     public ResponseEntity<Company> addCompany(@RequestBody Company company) {
         return ResponseEntity.status(HttpStatus.OK).body(companyService.addCompany(company));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCompany(@PathVariable("id") Long id) {
+        companyService.deleteCompany(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Company with id " + id + " was deleted.");
     }
 }
