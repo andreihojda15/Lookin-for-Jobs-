@@ -13,10 +13,9 @@
 		572153ED292E2A620026831B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572153EC292E2A620026831B /* Preview Assets.xcassets */; };
 		572153EF292E2A620026831B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572153EE292E2A620026831B /* Persistence.swift */; };
 		572153F2292E2A620026831B /* Lookin_ForJobs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 572153F0292E2A620026831B /* Lookin_ForJobs.xcdatamodeld */; };
-		5721541A292EBD950026831B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57215419292EBD950026831B /* SwiftUIView.swift */; };
-		5721541C292ED81A0026831B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5721541B292ED81A0026831B /* User.swift */; };
-		57D7241E2940BD9F00921331 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7241D2940BD9F00921331 /* ServerManager.swift */; };
-		57D724202940BDAF00921331 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7241F2940BDAF00921331 /* Student.swift */; };
+		57495246295E3613002B2D0D /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57495245295E3613002B2D0D /* StudentModel.swift */; };
+		57495249295E369C002B2D0D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57495248295E369C002B2D0D /* NetworkManager.swift */; };
+		5749524D295E38F3002B2D0D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749524C295E38F3002B2D0D /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +26,9 @@
 		572153EC292E2A620026831B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		572153EE292E2A620026831B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		572153F1292E2A620026831B /* Lookin_ForJobs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lookin_ForJobs.xcdatamodel; sourceTree = "<group>"; };
-		57215419292EBD950026831B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		5721541B292ED81A0026831B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		57D7241D2940BD9F00921331 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
-		57D7241F2940BDAF00921331 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		57495245295E3613002B2D0D /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		57495248295E369C002B2D0D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5749524C295E38F3002B2D0D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,16 +61,15 @@
 		572153E4292E2A600026831B /* Lookin'ForJobs */ = {
 			isa = PBXGroup;
 			children = (
+				57495244295E35FC002B2D0D /* ViewModels */,
 				572153E5292E2A600026831B /* Lookin_ForJobsApp.swift */,
-				57D7241F2940BDAF00921331 /* Student.swift */,
-				57D7241D2940BD9F00921331 /* ServerManager.swift */,
 				572153E7292E2A600026831B /* ContentView.swift */,
 				572153E9292E2A620026831B /* Assets.xcassets */,
 				572153EE292E2A620026831B /* Persistence.swift */,
 				572153F0292E2A620026831B /* Lookin_ForJobs.xcdatamodeld */,
 				572153EB292E2A620026831B /* Preview Content */,
-				57215419292EBD950026831B /* SwiftUIView.swift */,
-				5721541B292ED81A0026831B /* User.swift */,
+				57495248295E369C002B2D0D /* NetworkManager.swift */,
+				5749524C295E38F3002B2D0D /* RegisterView.swift */,
 			);
 			path = "Lookin'ForJobs";
 			sourceTree = "<group>";
@@ -83,6 +80,14 @@
 				572153EC292E2A620026831B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57495244295E35FC002B2D0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				57495245295E3613002B2D0D /* StudentModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,14 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5749524D295E38F3002B2D0D /* RegisterView.swift in Sources */,
+				57495249295E369C002B2D0D /* NetworkManager.swift in Sources */,
 				572153EF292E2A620026831B /* Persistence.swift in Sources */,
 				572153E8292E2A600026831B /* ContentView.swift in Sources */,
-				5721541C292ED81A0026831B /* User.swift in Sources */,
 				572153E6292E2A600026831B /* Lookin_ForJobsApp.swift in Sources */,
-				57D7241E2940BD9F00921331 /* ServerManager.swift in Sources */,
+				57495246295E3613002B2D0D /* StudentModel.swift in Sources */,
 				572153F2292E2A620026831B /* Lookin_ForJobs.xcdatamodeld in Sources */,
-				5721541A292EBD950026831B /* SwiftUIView.swift in Sources */,
-				57D724202940BDAF00921331 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
