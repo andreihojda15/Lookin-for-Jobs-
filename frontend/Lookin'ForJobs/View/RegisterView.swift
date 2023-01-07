@@ -8,32 +8,34 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @ObservedObject var studentModel: StudentModel = StudentModel()
-    
+    @State var student = StudentModel()
+    @StateObject private var vm = RegisterViewModel()
     
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    TextField("First Name", text: $studentModel.firstName)
+                    TextField("First Name", text: $student.firstName)
                         .cornerRadius(5.0)
                     
-                    TextField("Last Name", text: $studentModel.lastName)
+                    TextField("Last Name", text: $student.lastName)
                         .cornerRadius(5.0)
                     
-                    TextField("E-mail", text: $studentModel.email)
+                    TextField("E-mail", text: $student.email)
                         .cornerRadius(5.0)
                     
-                    TextField("Password",text: $studentModel.password)
+                    TextField("Password",text: $student.password)
                         .cornerRadius(5.0)
                 }
                     Button("register") {
-                        //
+                        vm.create(person: student)
                     }
                 
-            } .background(Color.red)
+            }
         }
+        .navigationTitle("Register")
+       
     }
 }
 

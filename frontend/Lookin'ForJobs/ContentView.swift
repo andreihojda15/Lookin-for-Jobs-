@@ -13,37 +13,39 @@ struct ContentView: View {
     
     
     var body: some View {
-       
-            RegisterView()
-//            VStack{
-//                NavigationLink(destination: Login()){
-//                    Text("login")
-//                }
-            
         
-//            VStack{
-//                List(self.student) { (student) in
-//                    Text(student.firstName)
-//                    
-//                }}.onAppear(perform: {
-//                    // Create the URL to fetch
-//                    guard let url = URL(string: "http://localhost:8081/api/user") else { fatalError("Invalid URL") }
-//
-//                    // Create the network manager
-//                    let networkManager = NetworkManager()
-//
-//                    // Request data from the backend
-//                    networkManager.request(fromURL: url) { (result: Result<[Student], Error>) in
-//                        switch result {
-//                        case .success(let users):
-//                            student = users
-//                            debugPrint("We got a successful result with \(student.count) users.")
-//                        case .failure(let error):
-//                            debugPrint("We got a failure trying to get the users. The error we got was: \(error.localizedDescription)")
-//                        }
-//                    }
-//                })
+       RegisterView()
+        //            VStack{
+        //                NavigationLink(destination: Login()){
+        //                    Text("login")
+        //                }
+        
+        
+        //            VStack{
+        //                List(self.student) { (student) in
+        //                    Text(student.firstName)
+        //
+        //                }}.onAppear(perform: {
+        // Create the URL to fetch
+        //                    guard let url = URL(string: "http://localhost:8081/api/user") else { fatalError("Invalid URL") }
+        //
+        //                    // Create the network manager
+        //                   NetworkManager
+        //                        .shared
+        //
+        //                    // Request data from the backend
+        //                    .request(fromURL: url) { (result: Result<[StudentModel], Error>) in
+        //                        switch result {
+        //                        case .success(let users):
+        //                            student = users
+        //                            debugPrint("We got a successful result with \(student.count) users.")
+        //                        case .failure(let error):
+        //                            debugPrint("We got a failure trying to get the users. The error we got was: \(error.localizedDescription)")
+        //                        }
+        //                    }
+        //                })
+        //
+        //    }
         
     }
-    
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StudentModel: Codable, Identifiable, ObservableObject{
+class StudentModel: Codable, Identifiable, ObservableObject {
     var id: Int = 0
     var firstName: String = ""
     var lastName: String = ""
@@ -15,4 +15,5 @@ class StudentModel: Codable, Identifiable, ObservableObject{
     var password: String = ""
     var contactNumber: String = ""
    // var dateOfBirth: String
+    
 }
