@@ -27,6 +27,10 @@ struct RegisterView: View {
                     
                     TextField("Password",text: $student.password)
                         .cornerRadius(5.0)
+                    
+                    TextField("Phone Number",text: $student.contactNumber)
+                        .cornerRadius(5.0)
+                    
                 }
                     Button("register") {
                         vm.create(person: student)

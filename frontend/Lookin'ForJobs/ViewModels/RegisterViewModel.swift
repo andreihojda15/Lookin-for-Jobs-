@@ -13,12 +13,12 @@ final class RegisterViewModel: ObservableObject {
     func create(person: StudentModel) {
         NetworkManager
             .shared
-            .postRequest(task: person) {  (result: Result<StudentModel, Error>) in
+            .postRequest(fromURL: URL(string: "http://localhost:8081/api/user")!, task: person) {  (result: Result<StudentModel, Error>) in
                 switch result {
                 case .success:
-                    debugPrint("We got a successful result with  users.")
+                    debugPrint("Success")
                 case .failure(let error):
-                    debugPrint("We got a failure trying to get the users. The error we got was: \(error.localizedDescription)")}
+                    debugPrint("We got a failure trying to post. The error we got was: \(error.localizedDescription)")}
             }
     }
 }

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct RegisterModel: Codable {
-    let firstName: String
-    let lastName: String
-    let email: String
-    let password: String
-}
 final class NetworkManager {
     
     static let shared = NetworkManager()
@@ -61,10 +55,10 @@ final class NetworkManager {
         urlSession.resume()
     }
 
-    func postRequest(task: StudentModel, completion: @escaping (Result<StudentModel, Error>) -> Void) {
-        let url = URL(string: "http://localhost:8081/api/user")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+    func postRequest<T: Codable>(fromURL url: URL, task: T, completion: @escaping (Result<T, Error>) -> Void) {
+        
+        // Create the request.
+        var request = buildRequest(from: url, httpMethod: HttpMethod.post)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
@@ -91,7 +85,7 @@ final class NetworkManager {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let user = try decoder.decode(StudentModel.self, from: data)
+                let user = try decoder.decode(T.self, from: data)
                 print(user)
                 completion(.success(user))
             } catch {
@@ -101,36 +95,8 @@ final class NetworkManager {
         
         task.resume()
     }
-    
-//    func request(fromURL url: URL, httpMethod: HttpMethod = .get, completion: @escaping (Result<Void, Error>) -> Void) {
-//        let completionOnMain: (Result<Void, Error>) -> Void = { result in
-//            DispatchQueue.main.async {
-//                completion(result)
-//            }
-//        }
-//
-//        // Create the request.
-//        let request = buildRequest(from: url, httpMethod: httpMethod)
-//
-//        let urlSession = URLSession.shared.dataTask(with: request) { data, response, error in
-//
-//            if let error = error {
-//                completionOnMain(.failure(error))
-//                return
-//            }
-//
-//            guard let urlResponse = response as? HTTPURLResponse else { return completionOnMain(.failure(ManagerErrors.invalidResponse)) }
-//            if !(200..<300).contains(urlResponse.statusCode) {
-//                return completionOnMain(.failure(ManagerErrors.invalidStatusCode(urlResponse.statusCode)))
-//            }
-//
-//        }
-//
-//        // Start the request
-//        urlSession.resume()
-//    }
-    
 }
+
 extension NetworkManager {
     /// The request method
     enum HttpMethod{
@@ -138,7 +104,6 @@ extension NetworkManager {
         case post
         }
     }
-
 
 private extension NetworkManager {
     func buildRequest(from url: URL,
