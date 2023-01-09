@@ -30,8 +30,21 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user) {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(user));
+    public ResponseEntity<?> addUser(@RequestBody User user) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(user));
+        }catch(EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(userService.login(user));
+        }catch(EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")

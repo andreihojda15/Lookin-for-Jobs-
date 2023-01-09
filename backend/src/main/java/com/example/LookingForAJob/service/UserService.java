@@ -32,6 +32,14 @@ public class UserService implements UserDetailsService {
         return userRepository.findById(id).get();
     }
 
+    public User login(User user) {
+        Optional<User> userFound = userRepository.findByEmail(user.getEmail());
+        if(userFound.isPresent() && encoder.matches(user.getPassword(), userFound.get().getPassword())) {
+            return userFound.get();
+        }
+        throw new EntityNotFoundException("User not found");
+    }
+
     public User addUser(User user) {
         String passwordEncoded = encoder.encode(user.getPassword());
         user.setPassword(passwordEncoded);
