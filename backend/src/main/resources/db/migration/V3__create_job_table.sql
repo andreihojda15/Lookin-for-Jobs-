@@ -1,5 +1,5 @@
 CREATE TABLE Job (
-  id int NOT NULL,
+  id int NOT NULL AUTO_INCREMENT,
   company_id int DEFAULT NULL,
   name varchar(45) DEFAULT NULL,
   experience int DEFAULT NULL,
