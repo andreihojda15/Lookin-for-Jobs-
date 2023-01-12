@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class NetworkManager {
     
@@ -94,6 +95,10 @@ final class NetworkManager {
         }
         
         task.resume()
+    }
+    
+    func login(credentials: Cr  , completion: @escaping (Result<Bool, Error>) -> Void) {
+
     }
 }
 
