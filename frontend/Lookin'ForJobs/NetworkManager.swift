@@ -95,11 +95,19 @@ final class NetworkManager {
         }
         
         task.resume()
+        
     }
     
-    func login(credentials: Cr  , completion: @escaping (Result<Bool, Error>) -> Void) {
-
-    }
+//    func login(credentials: Credentials, completion: @escaping (Result<Bool, Error>) -> Void) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            if credentials.password == "a" {
+//                completion(.success(true))
+//            } else {
+//                completion(.failure(ManagerErrors.invalidResponse))
+//            }
+//        }
+//
+//    }
 }
 
 extension NetworkManager {

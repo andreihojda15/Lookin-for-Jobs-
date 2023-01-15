@@ -13,8 +13,10 @@ struct ContentView: View {
     
     
     var body: some View {
-        
-       RegisterView()
+        VStack{
+            
+        }
+      // RegisterView()
         //            VStack{
         //                NavigationLink(destination: Login()){
         //                    Text("login")
