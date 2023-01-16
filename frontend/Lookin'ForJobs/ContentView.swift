@@ -13,9 +13,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack{
-            
-        }
+       JobsView()
       // RegisterView()
         //            VStack{
         //                NavigationLink(destination: Login()){

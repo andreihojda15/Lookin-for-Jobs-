@@ -19,6 +19,8 @@
 		5749524D295E38F3002B2D0D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5749524C295E38F3002B2D0D /* RegisterView.swift */; };
 		57577AF52970DD7100D214DF /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57577AF42970DD7100D214DF /* Authentication.swift */; };
 		57577AF829749CD000D214DF /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57577AF729749CD000D214DF /* SeparatorView.swift */; };
+		577D00BA2975D87F00F0CE3A /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D00B92975D87F00F0CE3A /* JobsView.swift */; };
+		577D00BC2975D9B700F0CE3A /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D00BB2975D9B700F0CE3A /* JobModel.swift */; };
 		579D8C472970C6E6002D0EFE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D8C462970C6E6002D0EFE /* LoginView.swift */; };
 		579D8C492970C732002D0EFE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D8C482970C732002D0EFE /* LoginViewModel.swift */; };
 		579D8C4B2970D164002D0EFE /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D8C4A2970D164002D0EFE /* Credentials.swift */; };
@@ -38,6 +40,8 @@
 		5749524C295E38F3002B2D0D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		57577AF42970DD7100D214DF /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		57577AF729749CD000D214DF /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		577D00B92975D87F00F0CE3A /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
+		577D00BB2975D9B700F0CE3A /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		579D8C462970C6E6002D0EFE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		579D8C482970C732002D0EFE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		579D8C4A2970D164002D0EFE /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				57495245295E3613002B2D0D /* StudentModel.swift */,
 				579D8C4A2970D164002D0EFE /* Credentials.swift */,
+				577D00BB2975D9B700F0CE3A /* JobModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				5749524C295E38F3002B2D0D /* RegisterView.swift */,
 				579D8C462970C6E6002D0EFE /* LoginView.swift */,
 				57577AF729749CD000D214DF /* SeparatorView.swift */,
+				577D00B92975D87F00F0CE3A /* JobsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			files = (
 				57577AF829749CD000D214DF /* SeparatorView.swift in Sources */,
 				5749524D295E38F3002B2D0D /* RegisterView.swift in Sources */,
+				577D00BA2975D87F00F0CE3A /* JobsView.swift in Sources */,
 				572A52AE2968E38B00719042 /* RegisterViewModel.swift in Sources */,
 				57495249295E369C002B2D0D /* NetworkManager.swift in Sources */,
 				579D8C4B2970D164002D0EFE /* Credentials.swift in Sources */,
@@ -207,6 +214,7 @@
 				572153E8292E2A600026831B /* ContentView.swift in Sources */,
 				572153E6292E2A600026831B /* Lookin_ForJobsApp.swift in Sources */,
 				57495246295E3613002B2D0D /* StudentModel.swift in Sources */,
+				577D00BC2975D9B700F0CE3A /* JobModel.swift in Sources */,
 				579D8C492970C732002D0EFE /* LoginViewModel.swift in Sources */,
 				572153F2292E2A620026831B /* Lookin_ForJobs.xcdatamodeld in Sources */,
 				57577AF52970DD7100D214DF /* Authentication.swift in Sources */,
