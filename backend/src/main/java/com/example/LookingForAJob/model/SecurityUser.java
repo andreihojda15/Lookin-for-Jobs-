@@ -21,14 +21,20 @@ public class SecurityUser implements UserDetails {
     }
 
     @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
     public String getPassword() {
         return user.getPassword();
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority(user.getRole()));
-    }
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//       // return Collections.singleton(new SimpleGrantedAuthority(user.getRole()));
+//        return Collections.emptyList();
+//    }
 
     @Override
     public boolean isAccountNonExpired() {
