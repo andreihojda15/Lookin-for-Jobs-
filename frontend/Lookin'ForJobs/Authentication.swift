@@ -11,7 +11,6 @@ class Authentication: ObservableObject {
     
     @Published var isValidated = false
     
-    
     func updateValidation(success: Bool) {
         withAnimation{
             isValidated = success
