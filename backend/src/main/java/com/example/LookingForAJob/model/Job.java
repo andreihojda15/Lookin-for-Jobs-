@@ -1,10 +1,13 @@
 package com.example.LookingForAJob.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -35,5 +38,9 @@ public class Job {
 
     @Column
     private String description;
+
+    @ManyToMany(mappedBy = "jobs")
+    @JsonIgnore
+    private Set<User> users;
 
 }

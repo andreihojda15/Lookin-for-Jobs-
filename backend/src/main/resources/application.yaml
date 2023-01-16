@@ -1,4 +1,6 @@
 spring:
+  flyway:
+    enabled: false
   datasource:
     url: jdbc:mysql://localhost:3306/JobsApp
     username: root
@@ -7,16 +9,16 @@ spring:
 
   jpa:
     show-sql: true
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL57Dialect
-#    hibernate:
-##      ddl-auto: update
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: update
+  #    properties:
+  #      hibernate:
+  #        dialect: org.hibernate.dialect.MySQL57Dialect
+  #    hibernate:
+  ##      ddl-auto: update
+  #    properties:
+  #      hibernate:
+  #        dialect: org.hibernate.dialect.MySQL57Dialect
 
   mail:
     host: localhost
@@ -37,4 +39,4 @@ spring:
           writetimeout: 5000
 
 server:
-  port : 8081
+  port: 8081
