@@ -8,6 +8,8 @@ import lombok.*;
 
 import java.sql.Blob;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -50,6 +52,12 @@ public class User {
     @Column(name = "role")
     private String role;
 
+    @ManyToMany
+    @JoinTable(name = "users_jobs",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "job_id"))
+    private Set<Job> jobs;
+
     public User(String firstName, String lastName, String email, String password, String contactNumber, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -59,4 +67,16 @@ public class User {
         this.role = role;
     }
 
+    public void addJob(Job job) {
+        this.jobs.add(job);
+        job.getUsers().add(this);
+    }
+//
+//    public void removeJob(Long jobId) {
+//        Job job = this.jobs.stream().filter(j -> j.getId() == jobId).findFirst().orElse(null);
+//        if(job != null) {
+//            this.jobs.remove(job);
+//            job.getUsers().remove(this);
+//        }
+//    }
 }

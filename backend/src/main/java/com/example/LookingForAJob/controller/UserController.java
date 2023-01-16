@@ -25,24 +25,28 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.getUser(id));
+    public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(userService.getUser(id));
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @PostMapping
     public ResponseEntity<?> addUser(@RequestBody User user) {
-        try{
+        try {
             return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(user));
-        }catch(EntityNotFoundException e) {
+        } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
-        try{
+        try {
             return ResponseEntity.status(HttpStatus.OK).body(userService.login(user));
-        }catch(EntityNotFoundException e) {
+        } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
@@ -61,9 +65,9 @@ public class UserController {
     public ResponseEntity<?> deleteUserById(@PathVariable("id") Long id) {
         try {
             User user = userService.removeUser(id);
-            return ResponseEntity.status(HttpStatus.OK).body(user);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 }
