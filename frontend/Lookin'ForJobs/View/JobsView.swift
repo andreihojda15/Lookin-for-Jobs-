@@ -18,7 +18,6 @@ struct JobsView: View {
                 .fontWeight(Font.Weight.bold)
                 .foregroundColor(Color.mint)
                 .padding(.trailing, 230)
-            
             Button("....") {
                 showingSheet.toggle()
             }
